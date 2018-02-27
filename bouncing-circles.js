@@ -1,4 +1,3 @@
-
 var circles = [];
 
 function setup() {
@@ -39,6 +38,7 @@ function draw() {
     if (circle.x > width || circle.x < 0) {
       circle.xd = -circle.xd;
 			circle.r = circle.r - 5;
+			circle.c = color(random(200,280), 60,60);
 		
 			
     }
