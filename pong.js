@@ -30,12 +30,13 @@ function setup() {
 
 function draw() {
 	background(255);
-
+ fill('black')
 	text(player1.score, width / 4, 2 + 15);
 	text(player2.score, 3 * width / 4, 2 + 15);
 	textSize(18);
 
 	// draw puck
+	fill('black')
 	ellipse(puck.x, puck.y, puck.r * 2);
 
 	// move puck
@@ -47,7 +48,9 @@ function draw() {
 	puck.y += puck.ySpeed;
 
 	// draw paddles
+	fill('blue')
 	rect(player1.x, player1.y, player1.wd, player1.ht);
+	fill('red')
 	rect(player2.x - player2.wd, player2.y, player2.wd, player2.ht);
 
 	// paddle movement
@@ -93,15 +96,17 @@ function draw() {
 		player2.score += 1;
 		puck.x = 200;
 		puck.y = 200;
-		puck.xSpeed = 1 ;
-		puck.ySpeed = -1;
+		puck.xSpeed = puck.xSpeed +1 ;
+		puck.ySpeed =  puck.ySpeed +1;
+		player2.ht = player2.ht -10;
 	}
 	if (puck.x > width) {
 		player1.score += 1;
 		puck.x = 200;
 		puck.y = 200;
-		puck.xSpeed = - 1 ;
-		puck.ySpeed = -1 ;
+		puck.xSpeed = puck.xSpeed + 1 ;
+		puck.ySpeed = puck.ySpeed +1 ;
+		player1.ht = player1.ht -10;
 	}
 }
 // keyboard input
